@@ -11,5 +11,7 @@ if __name__ == "__main__":
         print("0 arguments.")
     else:
         print(f"{n} argument{'s' if n != 1 else ''}:")
-        for j, arg in enumerate(argv, start=1):
+        while j <= n:
+            arg = argv[j-1]
             print(f"{j}: {arg}")
+            j += 1
