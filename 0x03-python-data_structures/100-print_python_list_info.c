@@ -1,9 +1,10 @@
 #include <Python.h>
 #include <stdio.h>
 /**
- * print_pythin_list_info - a C function that prints some basic info about Python lists.
- *
- * Return: basic info about python lists
+ * print_python_list_info - a C function that prints some basic info about,
+ * Python lists.
+ *@p: a pointer to a Python object
+ * Return: basic info about python lists.
  **/
 void print_python_list_info(PyObject *p)
 {
