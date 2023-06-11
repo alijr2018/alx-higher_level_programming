@@ -17,11 +17,11 @@ void print_python_list_info(PyObject *p)
 	printf("[*] Size of the Python List = %ld\n", size);
 	printf("[*] Allocated = %ld\n", allocated);
 
-	i = 0
-		while (i < size) 
-		{
-			item = PyList_GetItem(p, i);
-			printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
-			i++;
-		}
+	i = 0;
+	while (i < size) 
+	{
+		item = PyList_GetItem(p, i);
+		printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
+		i++;
+	}
 }
