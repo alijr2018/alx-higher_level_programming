@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def list_division(my_list_1, my_list_2, list_length):
     result = []
     for i in range(list_length):
@@ -7,7 +6,10 @@ def list_division(my_list_1, my_list_2, list_length):
             dividend = my_list_1[i] if i < len(my_list_1) else 0
             divisor = my_list_2[i] if i < len(my_list_2) else 1
 
-            if not isinstance(dividend, (int, float)) or not isinstance(divisor, (int, float)):
+            is_dividend_valid = isinstance(dividend, (int, float))
+            is_divisor_valid = isinstance(divisor, (int, float))
+
+            if not is_dividend_valid or not is_divisor_valid:
                 raise TypeError("wrong type")
 
             division = dividend / divisor
