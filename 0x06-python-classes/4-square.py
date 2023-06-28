@@ -8,6 +8,12 @@ class Square:
         """The def of square."""
         self.__size = size
 
+    @property
+    def size(self):
+        """The def of size"""
+        return self.__size
+
+    @size.setter
     def size(self, value):
         """The def of size"""
         if not isinstance(value, int):
