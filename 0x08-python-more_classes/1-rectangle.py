@@ -5,9 +5,9 @@ This is a Rectangle module
 
 
 class Rectangle:
-    """The Rectangle class and def for length and width"""
-    def __init__(self, length=0, width=0):
-        self.length = length
+    """The Rectangle class and def for height and width"""
+    def __init__(self, height=0, width=0):
+        self.height = height
         self.width = width
 
     @property
@@ -23,13 +23,13 @@ class Rectangle:
         self.__width = value
 
     @property
-    def lenght(self):
-        return self.__lenght
+    def height(self):
+        return self.__height
 
-    @lenght.setter
-    def lenght(self, value):
+    @height.setter
+    def height(self, value):
         if not isinstance(value, int):
-            raise TypeError("lenght must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("lenght must be >= 0")
-        self.__lenght = value
+            raise ValueError("height must be >= 0")
+        self.__height = value
