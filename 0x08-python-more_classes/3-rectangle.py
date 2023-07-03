@@ -44,12 +44,11 @@ class Rectangle:
             return (2 * (self.__width + self.__height))
 
     def __str__(self):
-        if self.__width == 0 or self.__height == 0:
-            return ("")
-        rect_str = ""
-        for _ in range(self.__height):
-            rect_str += "#" * self.__width + "\n"
-        return (rect_str.rstrip())
-
-    def __repr__(self):
-        return (f"Rectangle({self.__width}, {self.__height})")
+        total = ""
+        if self.__height == 0 or self.width == 0:
+            return total
+        for i in range(self.__height):
+            total += ("#" * self.__width)
+            if i is not self.__height - 1:
+                total += "\n"
+        return total
