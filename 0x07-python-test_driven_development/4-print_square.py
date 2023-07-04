@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def print_square(size):
     # Check if size is an integer
     if not isinstance(size, int):
