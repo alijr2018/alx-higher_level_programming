@@ -6,6 +6,7 @@ This is the  N queens puzzle.
 
 import sys
 
+
 def is_safe(board, row, col):
     # Check if there is a queen in the same column
     for i in range(row):
@@ -32,6 +33,7 @@ def is_safe(board, row, col):
 
     return True
 
+
 def solve_nqueens(n):
     board = [['.' for _ in range(n)] for _ in range(n)]
     solutions = []
@@ -49,10 +51,12 @@ def solve_nqueens(n):
     backtrack(0)
     return solutions
 
+
 def print_solutions(solutions):
     for solution in solutions:
         print('\n'.join(solution))
         print()
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
