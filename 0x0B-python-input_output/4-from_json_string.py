@@ -6,6 +6,7 @@ Write a function that returns an object
 """
 import json
 
+
 def from_json_string(my_str):
     """def of from_json_string"""
     return (json.loads(my_str))
