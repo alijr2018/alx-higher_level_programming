@@ -5,8 +5,19 @@ Write a script that adds all arguments to a Python list,
 and then save them to a file
 """
 import json
-from save_to_json_file import save_to_json_file
-from load_from_json_file import load_from_json_file
+
+
+def save_to_json_file(my_obj, filename):
+    """def of save_to_json_file"""
+    with open(filename, mode='w') as file:
+        json.dump(my_obj, file)
+
+
+def load_from_json_file(filename):
+    """def of load_from_json_file"""
+    with open(filename) as file:
+        return (json.load(file))
+
 
 try:
     items = load_from_json_file("add_item.json")
