@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-"""
-Write a class Rectangle that inherits from BaseGeometry.
-"""
+"""writing a base geometry class"""
 
 
 class BaseGeometry:
-    """calss of base geometry"""
+    """writing a base geometry class"""
 
     def area(self):
-        """def of area"""
+        """It raise an exception for area not def"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """def integer validator"""
+        """validation of value for int and > 0"""
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
@@ -20,10 +18,10 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """the class of rectangle"""
+    """Rectangle class inherit from base geometry"""
 
     def __init__(self, width, height):
-        """def init"""
+        """a constructor class for rectangle"""
         super().integer_validator("width", width)
         super().integer_validator("height", height)
         self.__width = width
