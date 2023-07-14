@@ -24,5 +24,8 @@ def matrix_divided(matrix, div):
         raise TypeError("Each row of the matrix must have the same size")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    n_m = [[round(item / div, 2) for item in lists] for lists in matrix]
+    if div == float('inf'):
+        n_m = [[0.0 for element in row] for row in matrix]
+    else:
+        n_m = [[round(item / div, 2) for item in lists] for lists in matrix]
     return (n_m)
