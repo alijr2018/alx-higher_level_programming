@@ -1,4 +1,4 @@
-text_indentation = __import__("5-text_indentation.py").text_indentation
+Test all delimeter with spaces at ends:
 >>> text_indentation("Hello   :     Holberton    ?    school.    fooo     ")
 Hello:
 <BLANKLINE>
