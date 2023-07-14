@@ -4,21 +4,21 @@ My name is Erick Kiminza
 
 works also if one name is passed
 
->>> say_my_name("Erick") # doctest: +NORMALIZE_WHITESPACE
+>>> say_my_name("Erick")
 My name is Erick
 
->>> say_my_name("", "Erick") # doctest: +NORMALIZE_WHITESPACE
+>>> say_my_name("", "Erick")
 My name is Erick
 
 Raises an exception if first name is not a string
->>> say_my_name(12, "Kilo") # doctest: +IGNORE_EXCEPTION_DETAIL
+>>> say_my_name(12, "Kilo") 
 Traceback (most recent call last):
 TypeError: first_name must be a string
 
 Raises an exception if last name is not a string
->>> say_my_name("kilo", 12) # doctest: +IGNORE_EXCEPTION_DETAIL
+>>> say_my_name("kilo", 12) 
 Traceback (most recent call last):
 TypeError: last_name must be a string
 
 If empty string is passed, prints only my name is
->>> say_my_name("", "") # doctest: +NORMALIZE_WHITESPACE
+>>> say_my_name("", "")
