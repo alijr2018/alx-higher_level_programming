@@ -24,4 +24,4 @@ def matrix_divided(matrix, div):
         raise TypeError("Each row of the matrix must have the same size")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    return ([[round(item / div, 2) for item in lists] for lists in matrix])
+    return [[round(item / div, 2) for item in lists] for lists in matrix]
