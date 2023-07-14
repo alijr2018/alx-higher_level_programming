@@ -4,6 +4,7 @@
 0
 >>> add_integer(15, 0)
 15
+
 >>> add_integer(2)
 100
 >>> add_integer()
