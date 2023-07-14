@@ -8,6 +8,6 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
-    if first_name == "":
-        pass
-    print("My name is {:s} {:s}".format(first_name, last_name))
+    full_name = f"{first_name} {last_name}" if last_name else first_name
+    if full_name.strip():
+        print("My name is", full_name)
