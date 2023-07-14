@@ -14,4 +14,3 @@ def say_my_name(first_name, last_name=""):
         print("My name is {:s}".format(first_name))
     elif last_name:
         print("My name is {:s}".format(last_name))
-
