@@ -72,10 +72,6 @@ class Rectangle(Base):
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
-    def __str__(self):
-        x = {self.__x}/{self.__y}
-        return (f"[Rectangle] ({self.id}) x - {self.__width}/{self.__height}")
-
     def update(self, *args, **kwargs):
         if len(args) > 0:
             self.id = args[0]
@@ -90,3 +86,7 @@ class Rectangle(Base):
 
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    def __str__(self):
+        x = {self.__x}/{self.__y}
+        return (f"[Rectangle] ({self.id}) x - {self.__width}/{self.__height}")
