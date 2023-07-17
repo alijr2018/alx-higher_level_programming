@@ -17,7 +17,7 @@ class Rectangle(Base):
     @property
     def width(self):
         return (self.__width)
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -65,16 +65,17 @@ class Rectangle(Base):
     def area(self):
         """ public method  def area"""
         return (self.__width * self.__height)
-    
+
     def display(self):
         """  public method def display"""
         print("\n" * self.__y, end="")
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
-    
+
     def __str__(self):
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
-    
+        x = {self.__x}/{self.__y}
+        return (f"[Rectangle] ({self.id}) x - {self.__width}/{self.__height}")
+
     def update(self, *args, **kwargs):
         if len(args) > 0:
             self.id = args[0]
@@ -88,4 +89,4 @@ class Rectangle(Base):
             self.y = args[4]
 
         for key, value in kwargs.items():
-            setattr(self, key, value) 
+            setattr(self, key, value)
