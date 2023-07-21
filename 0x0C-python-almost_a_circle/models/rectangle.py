@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 
-"""Write the class Rectangle that inherits from Base"""
+"""Write the class Rectangle that inherits from Base."""
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class that inherits from Base"""
+    """Rectangle class that inherits from Base."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize Rectangle instance"""
+        """Initialize Rectangle instance."""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -18,12 +18,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Getter for width attribute"""
+        """Getter for width attribute."""
         return (self.__width)
 
     @width.setter
     def width(self, value):
-        """Setter for width attribute"""
+        """Setter for width attribute."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -32,12 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Getter for height attribute"""
+        """Getter for height attribute."""
         return (self.__height)
 
     @height.setter
     def height(self, value):
-        """Setter for height attribute"""
+        """Setter for height attribute."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -46,12 +46,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Getter for x attribute"""
+        """Getter for x attribute."""
         return (self.__x)
 
     @x.setter
     def x(self, value):
-        """Setter for x attribute"""
+        """Setter for x attribute."""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -60,12 +60,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Getter for y attribute"""
+        """Getter for y attribute."""
         return (self.__y)
 
     @y.setter
     def y(self, value):
-        """Setter for y attribute"""
+        """Setter for y attribute."""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -73,16 +73,16 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Calculate the area of the Rectangle"""
+        """Calculate the area of the Rectangle."""
         return (self.__width * self.__height)
 
     def display(self):
-        """Print the Rectangle using '#' character"""
+        """Print the Rectangle using '#' character."""
         for _ in range(self.__height):
             print("#" * self.__width)
 
     def __str__(self):
-        """Return string representation of the Rectangle"""
+        """Return string representation of the Rectangle."""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height
         ))
