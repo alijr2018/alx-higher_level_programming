@@ -95,7 +95,7 @@ class Rectangle(Base):
             print(" " * self.__x + "#" * self.__width)
 
     def update(self, *args, **kwargs):
-        """Assign key-value arguments to attributes"""
+        """Assign key-value arguments to attributes."""
         if args:
             attr_names = ['id', 'width', 'height', 'x', 'y']
             for idx, arg in enumerate(args):
@@ -105,7 +105,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """Return dictionary representation of the Rectangle"""
+        """Return dictionary representation of the Rectangle."""
         return {
             'id': self.id,
             'width': self.width,
