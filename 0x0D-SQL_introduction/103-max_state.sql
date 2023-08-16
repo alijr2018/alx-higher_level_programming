@@ -4,5 +4,5 @@ USE hbtn_0c_0;
 SELECT state, MAX(temp_max) AS max_temp
 FROM temperatures
 GROUP BY state
-ORDER BY state;
+ORDER BY max_temp DESC;
     
