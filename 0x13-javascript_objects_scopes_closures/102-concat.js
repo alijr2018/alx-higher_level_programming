@@ -19,11 +19,6 @@ fs.readFile(sourceFile1, 'utf8', (err, data1) => {
 
     const concatenatedData = data1 + '\n' + data2;
 
-    fs.writeFile(destinationFile, concatenatedData, 'utf8', (err) => {
-      if (err) {
-        console.error(err.message);
-        process.exit(1);
-      }
-    });
+    fs.writeFile(destinationFile, concatenatedData, 'utf8', (err) => {});
   });
 });
