@@ -16,6 +16,3 @@ for (const userId in originalDict) {
 }
 
 console.log(sortedDict);
-
-
-
