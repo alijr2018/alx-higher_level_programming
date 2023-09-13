@@ -6,4 +6,5 @@ const initialList = data.list;
 const newList = initialList.map((value, index) => value * index);
 
 console.log(initialList);
-console.log(newList);
+console.log(newList);  
+   
