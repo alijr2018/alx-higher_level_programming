@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
 const fs = require('fs');
+
 const sourceFile1 = process.argv[2];
 const sourceFile2 = process.argv[3];
 const destinationFile = process.argv[4];
