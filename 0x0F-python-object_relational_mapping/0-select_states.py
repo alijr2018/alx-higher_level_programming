@@ -1,20 +1,30 @@
 #!/usr/bin/python3
 
-"""script that lists all states from the database hbtn_0e_0_usa"""
+"""
+A script that lists all states from the database hbtn_0e_0_usa.
+"""
 
+import sys
 import MySQLdb
-from sys import argv
+
 
 if __name__ == '__main__':
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3],
+                         host='localhost', port=3306)
 
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3])
+    cursor = db.cursor()
 
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states")
+    sql = """SELECT cities.name
+          FROM states
+          INNER JOIN cities ON states.id = cities.state_id
+          WHERE states.name = %s
+          ORDER BY cities.id ASC"""
 
-    rows = cur.fetchall()
-    for i in rows:
-        print(i)
-    cur.close()
+    cursor.execute(sql, (sys.argv[4],))
+
+    data = cursor.fetchall()
+
+    print(", ".join([city[0] for city in data]))
+
+    cursor.close()
     db.close()
