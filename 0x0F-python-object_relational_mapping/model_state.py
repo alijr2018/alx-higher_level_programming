@@ -13,7 +13,7 @@ class City(Base):
     """
     City class that inherits from Base
     """
-    __tablename__ = "cities"
+    __tablename__ = "atates"
+
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
