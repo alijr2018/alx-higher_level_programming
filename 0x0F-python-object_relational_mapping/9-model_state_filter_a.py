@@ -4,10 +4,12 @@ A script that lists all State objects that contain the letter,
 a from the database hbtn_0e_6_usa.
 """
 
-from model_state import Base, State
+from sys import argv
+from model_state import Base
+from model_state import State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sys import argv
+
 
 if __name__ == "__main__":
 
