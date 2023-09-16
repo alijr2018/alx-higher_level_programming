@@ -2,33 +2,21 @@
 import MySQLdb
 import sys
 
-if len(sys.argv) != 4:
-    sys.exit(1)
-
-mysql_username = sys.argv[1]
-mysql_password = sys.argv[2]
-database_name = sys.argv[3]
+username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
 try:
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name
-    )
-
+    db = MySQLdb.connect(host='localhost', port=3306, user=username, passwd=password, db=database)
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT id, name FROM states ORDER BY id ASC")
 
-    states = cursor.fetchall()
-    for state in states:
-        print(state)
+    rows = cursor.fetchall()
+
+    for row in rows:
+        print(row)
 
     cursor.close()
     db.close()
 
 except MySQLdb.Error as e:
-    print("MySQL Error: {}".format(e))
-    sys.exit(1)
+    print(f"An error occurred: {e}")
