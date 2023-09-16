@@ -6,39 +6,24 @@
  """
 
 import MySQLdb
-import sys
+from sys import argv
 
-# Retrieve command line arguments
-username, password, database, state_name = sys.argv[1],
-sys.argv[2], sys.argv[3], sys.argv[4]
+# The code should not be executed when imported
+if __name__ == '__main__':
 
-# Connect to MySQL server
-try:
-    db = MySQLdb.connect(
-        host='localhost',
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database
-    )
-    cursor = db.cursor()
+    # make a connection to the database
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
 
-    # Execute the query to retrieve states matching the provided name
-    cursor.execute(
-        "SELECT id, name FROM states WHERE name = %s ORDER BY id ASC",
-        (state_name,)
-    )
+    # It gives us the ability to have multiple seperate working environments
+    # through the same connection to the database.
+    cur = db.cursor()
+    nmeSr = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(argv[4])
+    cur.execute(nmeSr)
 
-    # Fetch all the rows
-    rows = cursor.fetchall()
-
-    # Display the results
-    for row in rows:
-        print(row)
-
-    # Close the cursor and connection
-    cursor.close()
+    rows = cur.fetchall()
+    for i in rows:
+        print(i)
+    # Clean up process
+    cur.close()
     db.close()
-
-except MySQLdb.Error as e:
-    print(f"An error occurred: {e}")
