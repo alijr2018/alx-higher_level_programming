@@ -15,4 +15,3 @@ if __name__ == "__main__":
     res = requests.post(url, data=i)
 
     print("Your email is:", email)
-    print(res.text)
