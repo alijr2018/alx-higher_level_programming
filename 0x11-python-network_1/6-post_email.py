@@ -18,6 +18,3 @@ if __name__ == "__main__":
 
     # Print the email from the response
     print("Your email is:", email)
-
-    # Print the body of the response
-    print(response.text)
