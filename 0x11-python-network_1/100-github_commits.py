@@ -11,7 +11,7 @@ if __name__ == "__main__":
     url = "https://api.github.com/repos/{owner_name}/{repository_name}/commits"
 
     res = requests.get(url)
-    commits = response.json()
+    commits = res.json()
 
     for commit in commits[:10]:
         sha = commit['sha']
