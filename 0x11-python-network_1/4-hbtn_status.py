@@ -3,7 +3,7 @@
 import requests
 
 if __name__ == "__main__":
-    url = ""
+    url = "https://alx-intranet.hbtn.io/status"
     rs = requests.get(url)
 
     print("Body response:")
