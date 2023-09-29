@@ -7,5 +7,5 @@ if __name__ == "__main__":
     rs = requests.get(url)
 
     print("Body response:")
-    print("\t- type:", type(response.text))
-    print("\t- content: {}".format(respone.text))
+    print("\t- type:", type(rs.text))
+    print("\t- content:", rs.text)
