@@ -8,5 +8,5 @@ if __name__ == "__main__":
     url = sys.argv[1]
 
     rs = requests.get(url)
-    rs_id = rs.header.get('X-Request-Id')
+    rs_id = response.header.get('X-Request-Id')
     print(rs_id)
