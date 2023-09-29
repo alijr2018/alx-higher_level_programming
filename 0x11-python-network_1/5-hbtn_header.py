@@ -10,4 +10,4 @@ if __name__ == "__main__":
     rs = requests.get(url)
     resquest_id = rs.headers.get('X-Request-Id')
 
-    print(request_id)
+    print(resquest_id)
