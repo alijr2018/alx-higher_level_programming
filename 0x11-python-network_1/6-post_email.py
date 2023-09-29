@@ -7,11 +7,17 @@ import requests
 import sys
 
 if __name__ == "__main__":
-
     url = sys.argv[1]
     email = sys.argv[2]
 
-    i = {'email': email}
-    res = requests.post(url, data=i)
+    # Create the payload with the email
+    payload = {'email': email}
 
-    print(email)
+    # Send a POST request with the payload
+    response = requests.post(url, data=payload)
+
+    # Print the email from the response
+    print("Your email is:", email)
+
+    # Print the body of the response
+    print(response.text)
