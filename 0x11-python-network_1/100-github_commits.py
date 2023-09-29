@@ -8,7 +8,7 @@ if __name__ == "__main__":
     rep_name = sys.argv[1]
     own_name = sys.argv[2]
 
-    url = "https://api.github.com/repos/{owner_name}/{repository_name}/commits"
+    url = f"https://api.github.com/repos/{owner_name}/{repository_name}/commits"
 
     res = requests.get(url)
     commits = res.json()
