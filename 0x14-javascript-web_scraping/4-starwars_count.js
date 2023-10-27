@@ -9,7 +9,7 @@ if (!apiUrl) {
   process.exit(1);
 }
 
-const characterId = 18; // Wedge Antilles' character ID
+const characterId = 18;
 
 request.get(apiUrl, (error, response, body) => {
   if (error) {
