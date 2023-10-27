@@ -21,11 +21,9 @@ request(apiUrl, (error, response, body) => {
           const character = JSON.parse(charBody);
           console.log(character.name);
         }
-
         fetchCharacter(index + 1);
       });
     }
-
     fetchCharacter(0);
   }
 });
