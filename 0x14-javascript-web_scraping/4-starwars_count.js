@@ -4,12 +4,10 @@ const request = require('request');
 
 const apiUrl = process.argv[2];
 
-request(apiUrl, function (error, response, body) {
+request(apiUrl, function (error, body) {
   if (error) {
     console.error(error);
-    return;
   }
-
   const films = JSON.parse(body).results;
   const characterId = '18';
   let count = 0;
