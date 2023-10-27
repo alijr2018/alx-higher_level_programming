@@ -9,23 +9,19 @@ if (!apiUrl) {
   process.exit(1);
 }
 
-const characterId = 18;
+const characterId = 18; // Wedge Antilles' character ID
 
 request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
-  } else if (response.statusCode === 200) {
+  } else if (response.statusCode !== 200) {
+    console.error(`Request failed with status code ${response.statusCode}`);
+  } else {
     const films = JSON.parse(body).results;
-    let count = 0;
-
-    films.forEach((film) => {
-      if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
-        count++;
-      }
-    });
+    const count = films.reduce((acc, film) => {
+      return film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`) ? acc + 1 : acc;
+    }, 0);
 
     console.log(count);
-  } else {
-    console.log('Invalid');
   }
 });
