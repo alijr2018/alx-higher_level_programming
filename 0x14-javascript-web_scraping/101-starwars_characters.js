@@ -14,6 +14,7 @@ request(apiUrl, (error, response, body) => {
     const characterUrls = movie.characters;
 
     function fetchCharacter (index) {
+      if (index >= characterUrls.length) return;
 
       request(characterUrls[index], (charError, charResponse, charBody) => {
         if (!charError && charResponse.statusCode === 200) {
