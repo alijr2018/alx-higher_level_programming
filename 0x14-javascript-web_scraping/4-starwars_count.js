@@ -7,9 +7,18 @@ const apiUrl = process.argv[2];
 request(apiUrl, function (error, response, body) {
   if (error) {
     console.error(error);
+    return;
   }
-  const nb = JSON.parse(body).results.filter((elem) => {
-    return elem.characters.filter((url) => { return url.includes('18'); }).length;
-  }).length;
-  console.log(nb);
+
+  const films = JSON.parse(body).results;
+  const characterId = '18';
+  let count = 0;
+
+  films.forEach((film) => {
+    if (film.characters.some((url) => url.includes(characterId))) {
+      count++;
+    }
+  });
+
+  console.log(count);
 });
