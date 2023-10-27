@@ -4,11 +4,6 @@ const request = require('request');
 
 const apiUrl = process.argv[2];
 
-if (!apiUrl) {
-  console.error('Please provide the API URL as an argument.');
-  process.exit(1);
-}
-
 const characterId = 18;
 
 request.get(apiUrl, (error, response, body) => {
